@@ -11,14 +11,16 @@ class Quiz {
     this.wrong = 0;
     this.right = 0;
     this.questionCounter = 0;
-    this.currentQuestion = -1;
+    this.currentQuestion = data.questions[0];
   }
 
   checkAnswer(input) {
-    return this.questions[this.questionCounter].answer == input;
+    const res =this.questions[this.questionCounter].answer == input;
+    this._updateCounters(res);
+    return res;
   }
 
-  updateCounters(res) {
+  _updateCounters(res) {
     if (res) {
       this.right++;
     } else {
@@ -27,9 +29,21 @@ class Quiz {
 
     this.questionCounter++;
   }
+  _endQuiz(){
 
+      let obj = {
+        correct: this.right,
+        wrong: this.wrong,
+        percent: this.right/this.quizLength
+      };
+      return obj;
+  }
   nextQuestion() {
-    this.currentQuestion = this.questionCounter + 1 ;
+      if(this.questionCounter == this.quizLength) {
+          return this._endQuiz();
+      } else {
+        this.currentQuestion = this.questions[this.questionCounter];
+      }
   }
 
   //Test function
@@ -47,35 +61,62 @@ window.onload = () => {
   //Controller function???
   function appCtrl(data) {
     let selection;
+
     const quiz = new Quiz(data);
 
-    quiz.nextQuestion();
+    let x = quiz.nextQuestion();
 
-    // EWWWWWWWWW
     $(".title").text(quiz.title);
-    $(".question").text(quiz.questions[0].question_string);
-    for (let i in quiz.questions[0].options) {
-      let option = quiz.questions[0].options[i];
-      $(".list-group").append(
-        `<li value="${i}" class="list-group-item">${i}: ${option}</li>`
-      );
-    }
 
-    $('.list-group').on('click','li', function() {
-       (selection)? selection.classList.remove('selected'): null;
-       selection = this;
-       selection.classList.add('selected');
-    });
+    updateUi();
+
+
+    $('.list-group').on('click','li', selector);
 
     $('#btn').on('click', function(){
-        console.log(selection.attributes.value.value);
         let check = quiz.checkAnswer(selection.attributes.value.value);
-        console.log(check);
+        let results = quiz.nextQuestion();
+        if(results) {
+            dispResults(results);
+        } else {
+            updateUi();
+        }
     });
 
 
 
 
 
+    //UI functions below
+    function dispResults(res) {
+        console.log(res);
+        let markup = `
+            <ul class="list-group py-2">
+            <li  class="list-group-item"> You answered ${res.correct} questions correctly</li>
+            <li  class="list-group-item"> You answered ${res.wrong} questions incorrectly</li>
+            <li  class="list-group-item"> Your score is: ${res.percent * 100}% </li>
+            </ul>
+        `;
+        $('.card-text').html(markup);
+    }
+    function selector() {
+        (selection)? selection.classList.remove('selected'): null;
+        selection = this;
+        selection.classList.add('selected');
+     }
+
+    function updateUi() {
+        $('.counter').text(`${quiz.questionCounter + 1} of ${quiz.quizLength}`);
+        $('.list-group').html(' ');
+        $(".question").text(quiz.currentQuestion.question_string);
+        for (let i in quiz.currentQuestion.options) {
+          let option = quiz.currentQuestion.options[i];
+          $(".list-group").append(
+            `<li value="${i}" class="list-group-item">${i}: ${option}</li>`
+          );
+        }
+      }
+
   }
+
 };
