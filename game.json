@@ -13,32 +13,30 @@
             "answer": "a"
         },
         {
-            "question_string": "What is the cookie monster's favorite food?",
+            "question_string": "What is color is the cookie monster?",
             "options": {
-                "a": "Cookies",
-                "b": "Ice cream",
-                "c": "Chocolate",
-                "d": "Cheese dfas g"
+                "a": "Green",
+                "b": "Blue",
+                "c": "Purple",
+                "d": "Yellow"
+            },
+            "answer": "b"
+        },
+        {
+            "question_string": "Is the cookie monster crazy?",
+            "options": {
+                "a": "Yes",
+                "b": "No"
             },
             "answer": "a"
         },
         {
-            "question_string": "What is the cookie monster's favorite food?",
+            "question_string": "What does C stand for?",
             "options": {
                 "a": "Cookies",
-                "b": "Ice cream",
+                "b": "Crumbs",
                 "c": "Chocolate",
                 "d": "Cheese"
-            },
-            "answer": "a"
-        },
-        {
-            "question_string": "What is the cookie monster's favorite food?",
-            "options": {
-                "a": "Cookies",
-                "b": "Ice cream",
-                "c": "Chocolate",
-                "d": "Cheese dfas g"
             },
             "answer": "a"
         }

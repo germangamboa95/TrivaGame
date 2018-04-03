@@ -12,27 +12,23 @@ window.onload = () => {
 
   //Controller function???
   function appCtrl(data) {
+      
     let selection;
 
     const quiz = new Quiz(data);
 
-    let x = quiz.nextQuestion();
+    quiz.nextQuestion();
 
     $(".title").text(quiz.title);
 
-    updateUi();
 
-
+    // UI highlight
     $('.list-group').on('click','li', selector);
 
+    // Next btn
     $('#btn').on('click', function(){
-        let check = quiz.checkAnswer(selection.attributes.value.value);
-        let results = quiz.nextQuestion();
-        if(results) {
-            dispResults(results);
-        } else {
-            updateUi();
-        }
+        quiz.nextQuestion(selection);
+
     });
 
 
