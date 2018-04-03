@@ -1,12 +1,12 @@
 body{
     height: 100vh;
-    background-image: url('https://images.pexels.com/photos/159627/pencils-clips-colour-pencils-foam-rubber-159627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-image: url('../img/quiz-bg.jpeg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-li:hover{
-    transform: scale(1.012);
+li.list-group-item:hover{
+    transform: scale(1.01);
     background-color: #5c81e6 !important;
 }
 .selected{
@@ -15,7 +15,9 @@ li:hover{
 .card{
     box-shadow: -6px 8px 20px 5px;
     background-color: #e5eaead9;
+    width: 100%; 
 }
 li.list-group-item{
     background-color: #dae0e5;
 }
+

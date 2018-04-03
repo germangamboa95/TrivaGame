@@ -1,0 +1,56 @@
+{
+    "name": "Weird And Strange",
+    "time": 300000,
+    "questions": [
+        {
+            "question_string": "For $ 150 you can become a licensed what in Texas?",
+            "options": {
+                "a": "Dead animal hunter",
+                "b": "Drug Dealer",
+                "c": "Ordained minister",
+                "d": "Cheese Maker"
+            },
+            "answer": "a"
+        },
+        {
+            "question_string": "Fifteen percent of women do what on Valentine’s Day?",
+            "options": {
+                "a": "Cheat on their partners",
+                "b": "Send themselves flowers",
+                "c": "Go out with friends",
+                "d": "Stay home away from everyone"
+            },
+            "answer": "b"
+        },
+        {
+            "question_string": "There are one trillion germs that live on each what?",
+            "options": {
+                "a": "A human ear",
+                "b": "A human mouth",
+                "c": "A human foot",
+                "d": "A human hand"
+            },
+            "answer": "c"
+        },
+        {
+            "question_string": "When a people are frightened, their ears produce more what?",
+            "options": {
+                "a": "Earwax",
+                "b": "Sweat",
+                "c": "Ear Cheese"
+            },
+            "answer": "a"
+        },
+        {
+            "question_string": "In Arizona you must register with state before becoming what?",
+            "options": {
+                "a": "A web developer",
+                "b": "A stripper",
+                "c": "A hobo",
+                "d": "A drug dealer"
+            },
+            "answer": "d"
+        }
+
+    ]
+}
