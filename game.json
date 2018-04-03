@@ -4,22 +4,22 @@
     "questions": [
         {
             "question_string": "What is the cookie monster's favorite food?",
-            "options": [{
+            "options": {
                 "a": "Cookies",
                 "b": "Ice cream",
                 "c": "Chocolate",
                 "d": "Cheese"
-            }],
+            },
             "answer": "a"
         },
         {
             "question_string": "What is the cookie monster's favorite food?",
-            "options": [{
+            "options": {
                 "a": "Cookies",
                 "b": "Ice cream",
                 "c": "Chocolate",
-                "d": "Cheese"
-            }],
+                "d": "Cheese dfas g"
+            },
             "answer": "a"
         }
 

@@ -11,35 +11,50 @@
         <style>
             body{
                 height: 100vh;
+                background-image: url('https://images.pexels.com/photos/159627/pencils-clips-colour-pencils-foam-rubber-159627.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            li:hover{
+                transform: scale(1.012);
+                background-color: #5c81e6 !important;
+            }
+            .selected{
+                background-color: #e65c5c !important; 
+            }
+            .card{
+                box-shadow: -6px 8px 20px 5px;
+                background-color: #e5eaead9;
+            }
+            li.list-group-item{
+                background-color: #dae0e5;
             }
         
         </style>
 </head>
 
 <body class="justify-content-center d-flex flex-column align-items-center">
-    <div class="container justify-content-center d-flex flex-column align-items-center">
+    <div class="container justify-content-center d-flex flex-column align-items-md-center">
 
-            <div class="card w-50">
-                <div class="title d-flex justify-content-between"><h2 class="pl-1">Title goes here!</h2><span class="counter pr-1">1 of 10</span></div>
-                <div class="card-text px-1">
-                    <p class"question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis natus, placeat quas commodi dolorum amet.</p>
+            <div class="card">
+                <div class=" d-flex justify-content-between"><h2 class="title pl-2">Title goes here!</h2><span class="counter pr-2">1 of 10</span></div>
+                <div class="card-text px-2">
+                    <p class="question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis natus, placeat quas commodi dolorum amet.</p>
                     <h5>Choose from the answers below:</h5>
                     <ul class="list-group">
-                        <li class="list-group-item">A: Lorem ipsum dolor sit amet.</li>
-                        <li class="list-group-item">B: Lorem ipsum dolor sit amet.</li>
-                        <li class="list-group-item">C: Lorem ipsum dolor sit amet.</li>
-                        <li class="list-group-item">D: Lorem ipsum dolor sit amet.</li>
+      
                     </ul>
                     <div class="controls d-flex justify-content-between">
-                            <span class="badge badge-info  my-2">60 seconds</span>
-                        <button class="btn btn-primary my-2">Next</button>
+                            <span class="badge badge-info my-2" style="height:1.5em">60 seconds</span>
+                        <button id="btn" class="btn btn-primary my-2 next">Next</button>
                     </div>
                 </div>
 
             </div>
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
 </body>
 
