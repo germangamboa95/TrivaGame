@@ -19,7 +19,7 @@ class Quiz {
     this.timerData = setInterval(() => {
       this.timeLeft -= 1000;
       console.log(this.timeLeft);
-      $('.timer').text(this.timeLeft / 1000 + ' Seconds' );
+      $('.timer').text(this.timeLeft / 1000 + ' Seconds Remain' );
       if(this.timeLeft < 0) {
         let res = this._endQuiz();
         this.dispResults(res, true);
