@@ -10,7 +10,7 @@ li.list-group-item:hover{
     background-color: #5c81e6 !important;
 }
 .selected{
-    background-color: #e65c5c !important; 
+    background-color: #5c81e6 !important;
 }
 .card{
     box-shadow: -6px 8px 20px 5px;

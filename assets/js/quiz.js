@@ -13,13 +13,14 @@ class Quiz {
     this.timerCountDown();
     this.timerData;
     this.updateUi();
+    this.wrongList = [];
   }
 
   timerCountDown() {
     this.timerData = setInterval(() => {
+      $('.timer').text(this.timeLeft / 1000 + ' Seconds Remain' );
       this.timeLeft -= 1000;
       console.log(this.timeLeft);
-      $('.timer').text(this.timeLeft / 1000 + ' Seconds Remain' );
       if(this.timeLeft < 0) {
         let res = this._endQuiz();
         this.dispResults(res, true);
@@ -29,7 +30,11 @@ class Quiz {
 
   checkAnswer(input) {
     const res = this.questions[this.questionCounter].answer === input;
-    console.log(input,' ', res);
+
+    if(!res) this.wrongList.push({
+      question: this.questions[this.questionCounter],
+      answer: this.questions[this.questionCounter].answer
+    });
     this._updateCounters(res);
     return res;
   }
@@ -45,6 +50,7 @@ class Quiz {
       percent: this.right / this.quizLength
     };
     clearTimeout(this.timerData);
+    console.log(this.wrongList);
     this.gihpy(obj);
     return obj;
   }
@@ -124,6 +130,8 @@ class Quiz {
       query = 'YES!';
     } else if(res.percent >= .9 && res.percent < 1) {
       query = 'win';
+    } else {
+      query = 'idk';    
     }
 
     fetch('https://api.giphy.com/v1/gifs/search?api_key=YqLensbIWv5skyGVSr6ZPFClfQImMmX4&q='+query+'&limit=10&offset=0&rating=R&lang=en')
