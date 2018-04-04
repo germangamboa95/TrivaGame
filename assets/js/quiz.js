@@ -18,7 +18,7 @@ class Quiz {
 
   timerCountDown() {
     this.timerData = setInterval(() => {
-      $('.timer').text(this.timeLeft / 1000 + ' Seconds Remain' );
+      $('.timer').text(this.timeLeft / 1000 + 's' );
       this.timeLeft -= 1000;
       console.log(this.timeLeft);
       if(this.timeLeft < 0) {
