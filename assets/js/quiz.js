@@ -73,7 +73,7 @@ class Quiz {
 
       this.updateUi();
     }
-    
+
     return null;
   }
 
@@ -103,7 +103,7 @@ class Quiz {
             100}% </li>
           </ul>
       `;
-    if(flag) $(".card-text").before('<h2  class="alert alert-danger text-center" role="alert">You ran out of time!</h2>');  
+    if(flag) $(".card-text").before('<h2  class="alert alert-danger text-center" role="alert">You ran out of time!</h2>');
 
     $(".card-text").html(markup);
   }
@@ -131,7 +131,7 @@ class Quiz {
     } else if(res.percent >= .9 && res.percent < 1) {
       query = 'win';
     } else {
-      query = 'idk';    
+      query = 'idk';
     }
 
     fetch('https://api.giphy.com/v1/gifs/search?api_key=YqLensbIWv5skyGVSr6ZPFClfQImMmX4&q='+query+'&limit=10&offset=0&rating=R&lang=en')
