@@ -1,25 +1,17 @@
 window.onload = () => {
+
+//Quiz selector
   $('a').on('click', function(){
     let quiz = this.attributes.value.value;
     fetch('quiz.html')
     .then(res => res.text())
     .then(data => {
-      $('body').html(data);
+      $('.fake-body').html(data);
        fetch(quiz)
       .then(res => res.json())
       .then(res => appCtrl(res));
-
     });
-
-
-
   });
-
-
-  // fetch("strange.json")
-  //   .then(res => res.json())
-  //   .then(res => appCtrl(res));
-
 
   // Import data
   function appCtrl(data) {
