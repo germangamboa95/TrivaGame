@@ -1,0 +1,60 @@
+{
+    "name": "JavaScript knowledge",
+    "time": 240000,
+    "questions": [
+        {
+            "question_string": "Inside which HTML element do we put the JavaScript?",
+            "options": {
+                "a": "&lt;js&gt;",
+                "b": "&lt;script&gt;",
+                "c": "&lt;javascript&gt;",
+                "d": "&lt;scripting&gt;"
+            },
+            "answer": "b"
+        },
+        {
+            "question_string": "Where is the correct place to insert a JavaScript?",
+            "options": {
+                "a": "Both the &lt;head&gt; section and the &lt;body&gt; section are correct",
+                "b": "The lt;body&gt; section",
+                "c": "The &lt;head&gt; section"
+            },
+            "answer": "a"
+        },
+        {
+            "question_string": "What is the correct syntax for referring to an external script called 'xxx.js'?",
+            "options": {
+                "a": "&ltscript href='xxx.js'&gt; ",
+                "b": "&ltscript name='xxx.js'&gt; ",
+                "c": "&ltscript src='xxx.js'&gt; "
+            },
+            "answer": "c"
+        },
+        {
+            "question_string": "The external JavaScript file must contain the <script> tag.",
+            "options": {
+                "a": "True",
+                "b": "False"
+            },
+            "answer": "b"
+        },
+        {
+            "question_string": "How do you create a function in JavaScript?",
+            "options": {
+                "a": "function:myFunction()",
+                "b": "function = myFunction()",
+                "c": "function myFunction()"
+            },
+            "answer": "c"
+        },
+        {
+            "question_string": "How do you call a function named 'myFunction'?",
+            "options": {
+                "a": "call function myFunction()",
+                "b": "myFunction()",
+                "c": "call myFunction()"
+            },
+            "answer": "b"
+        }
+    ]
+}
