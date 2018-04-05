@@ -29,11 +29,11 @@ class Quiz {
 
   checkAnswer(input) {
     const res = this.questions[this.questionCounter].answer === input;
-
     if(!res) this.wrongList.push({
       question: this.questions[this.questionCounter],
       answer: this.questions[this.questionCounter].answer
     });
+
     this._updateCounters(res);
     return res;
   }
@@ -42,6 +42,7 @@ class Quiz {
     res ? this.right++ : this.wrong++;
     this.questionCounter++;
   }
+
   _endQuiz() {
     let obj = {
       correct: this.right,
@@ -55,32 +56,21 @@ class Quiz {
   }
 
   nextQuestion(selection) {
-
     let select = selection? selection.attributes.value.value : false;
-
     this.checkAnswer(select);
-
     if (this.questionCounter > this.quizLength -1) {
-
       let res = this._endQuiz();
-
       this.dispResults(res);
-
     } else {
-
       this.currentQuestion = this.questions[this.questionCounter];
-
       this.updateUi();
     }
-
     return null;
   }
 
   updateUi() {
-
     $(".counter").text(`${this.questionCounter +1 } of ${this.quizLength}`);
     $(".list-group").html(" ");
-
     $(".question").text(this.currentQuestion.question_string);
     for (let i in this.currentQuestion.options) {
       let option = this.currentQuestion.options[i];
@@ -88,7 +78,6 @@ class Quiz {
         `<li value="${i}" class="list-group-item">${i}: ${option}</li>`
       );
     }
-
   }
 
   dispResults(res, flag = false) {
@@ -135,7 +124,6 @@ class Quiz {
     } else {
       query = 'idk';
     }
-
     fetch('https://api.giphy.com/v1/gifs/search?api_key=YqLensbIWv5skyGVSr6ZPFClfQImMmX4&q='+query+'&limit=10&offset=0&rating=R&lang=en')
       .then(res => res.json())
       .then(data => this.addPic(data));
