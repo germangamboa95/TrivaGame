@@ -1,6 +1,6 @@
 body{
     height: 100vh;
-    background-image: url('../img/quiz-bg.jpeg');
+    background-image: url('../img/quiz-bg-compressed.jpeg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,9 +15,8 @@ li.list-group-item:hover{
 .card{
     box-shadow: -6px 8px 20px 5px;
     background-color: #e5eaead9;
-    width: 100%; 
+    width: 100%;
 }
 li.list-group-item{
     background-color: #dae0e5;
 }
-

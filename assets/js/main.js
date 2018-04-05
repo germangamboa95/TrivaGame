@@ -2,8 +2,9 @@ window.onload = () => {
 
 //Quiz selector
   $('a').on('click', function(){
+
     let quiz = this.attributes.value.value;
-    fetch('quiz.html')
+    fetch('htmlComponent/quiz.html')
     .then(res => res.text())
     .then(data => {
       $('.fake-body').html(data);
@@ -19,6 +20,7 @@ window.onload = () => {
     let selection;
 
     const quiz = new Quiz(data);
+
 
 
     //Quiz Name
@@ -38,9 +40,11 @@ window.onload = () => {
 
     //UI helper function'
     function selector() {
+
         (selection)? selection.classList.remove('selected'): null;
         selection = this;
         selection.classList.add('selected');
+
      }
   }
 };

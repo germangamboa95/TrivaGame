@@ -20,7 +20,6 @@ class Quiz {
     this.timerData = setInterval(() => {
       $('.timer').text(this.timeLeft / 1000 + 's' );
       this.timeLeft -= 1000;
-      console.log(this.timeLeft);
       if(this.timeLeft < 0) {
         let res = this._endQuiz();
         this.dispResults(res, true);
@@ -78,8 +77,10 @@ class Quiz {
   }
 
   updateUi() {
+
     $(".counter").text(`${this.questionCounter +1 } of ${this.quizLength}`);
     $(".list-group").html(" ");
+
     $(".question").text(this.currentQuestion.question_string);
     for (let i in this.currentQuestion.options) {
       let option = this.currentQuestion.options[i];
@@ -87,6 +88,7 @@ class Quiz {
         `<li value="${i}" class="list-group-item">${i}: ${option}</li>`
       );
     }
+
   }
 
   dispResults(res, flag = false) {
